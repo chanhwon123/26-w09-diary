@@ -1,111 +1,148 @@
+
+/* ===== 감성 북 다이어리 디자인 ===== */
+
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+  font-family: "Noto Serif KR", "Georgia", serif;
+  color: #45382f;
+  background: #f5efe5;
 }
 
 body {
   margin: 0;
+  background:
+    radial-gradient(ellipse at top, #fffaf0 0%, #f3eadc 75%);
+  color: #45382f;
+  min-height: 100vh;
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
+/* 전체 페이지 */
+main {
+  min-height: 100vh;
+  padding: 50px 20px;
   box-sizing: border-box;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+main > div {
+  max-width: 780px;
+  margin: 0 auto;
 }
 
+/* 메인 제목 */
 h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
+  font-family: "Noto Serif KR", Georgia, serif;
+  font-size: 42px !important;
+  font-weight: 700;
+  letter-spacing: -2px;
+  color: #49372b;
+  margin-bottom: 12px;
 }
+
 h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
+  font-family: Georgia, "Noto Serif KR", serif;
+  color: #49372b;
+  font-size: 25px;
 }
+
+/* 카드 디자인 */
+.rounded-3xl,
+.rounded-2xl {
+  background: #fffdf8 !important;
+  border: 1px solid #e8dccb;
+  border-radius: 18px !important;
+  box-shadow: 0 8px 25px rgba(87, 65, 43, 0.08) !important;
+  padding: 28px !important;
+  margin-bottom: 24px;
+}
+
+/* 감정 버튼 */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+/* 감정 선택 / 필터 버튼 */
+button:not(:disabled) {
+  border-radius: 10px;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* 입력창 */
+textarea,
+input {
+  font-family: inherit;
+  background: #fffaf2 !important;
+  color: #49372b !important;
+  border: 1px solid #dfcfbb !important;
+  border-radius: 12px !important;
+  padding: 15px !important;
+  box-sizing: border-box;
+}
+
+textarea {
+  width: 100%;
+  min-height: 150px;
+  line-height: 1.8;
+  resize: vertical;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+  border-color: #9b7855 !important;
+  box-shadow: 0 0 0 3px rgba(155, 120, 85, 0.12);
+}
+
+/* 저장 버튼 */
+button[class*="bg-purple"],
+button[class*="bg-indigo"] {
+  background: #79583f !important;
+  color: #fffaf2 !important;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 10px;
+}
+
+button[class*="bg-purple"]:hover,
+button[class*="bg-indigo"]:hover {
+  background: #60432e !important;
+}
+
+/* 일기 카드 */
+article,
+[class*="diary-card"] {
+  background: #fffdf8;
+  border: 1px solid #e7d9c7;
+  border-radius: 14px;
+  padding: 22px;
+  margin-bottom: 16px;
+}
+
+/* 글 내용 */
 p {
-  margin: 0;
+  line-height: 1.8;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
+/* 작은 화면 */
+@media (max-width: 600px) {
+  main {
+    padding: 24px 12px;
+  }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+  h1 {
+    font-size: 32px !important;
+  }
+
+  .rounded-3xl,
+  .rounded-2xl {
+    padding: 18px !important;
+  }
 }
