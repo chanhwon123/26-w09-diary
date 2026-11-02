@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/26-w09-diary/',
+  base: process.env.GITHUB_ACTIONS ? '/26-w09-diary/' : '/',
 })
