@@ -1,8 +1,7 @@
-import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
 export default defineConfig({
-  base: './', // Netlify 및 GitHub Pages 배포 경로 호환
   plugins: [react()],
+  base: '/26-w09-diary/',
 })

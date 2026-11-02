@@ -72,6 +72,6 @@ Secret Key 또는 Service Role Key는 클라이언트 코드에 포함하면 안
 
 ## 실행 및 배포 링크
 
-- Netlify 배포 URL: 배포 후 추가 예정
-- GitHub Pages 배포 URL: 배포 후 추가 예정
+- Netlify 배포 URL: https://luxury-cheesecake-53ccb5.netlify.app/
+- GitHub Pages 배포 URL: 
 - GitHub 저장소: [26-w09-diary
